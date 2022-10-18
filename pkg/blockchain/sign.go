@@ -1,0 +1,6 @@
+package blockchain
+
+
+func SignInvoice() {
+	
+}
