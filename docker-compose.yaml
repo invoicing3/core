@@ -5,12 +5,17 @@ volumes:
   geth_data:
 services:
   geth:
-    image: ethereum/client-go:stable
+    image: ethereum/client-go:latest
     ports:
       - 30303:30303
       - 8545:8545
       - 8546:8545
       - 8547:8545
+      - 8551:8551
+    # args: []
+      # - --dev
+      # - --http
+    # command: ["/usr/local/bin/geth","--dev","--http","--http.api","eth,web3,personal,net","--http.corsdomain","http://remix.ethereum.org"]
     volumes:
       - geth_data:/root/.ethereum
     networks:

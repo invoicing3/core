@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/invoicing3/core/pkg/blockchain"
 	"github.com/invoicing3/core/pkg/models"
 )
 var items = []models.InvoiceItem{
@@ -21,6 +22,7 @@ var invoice = models.Invoice{
 	Items: items,
 }
 func main() {
-	
-	log.Fatal((invoice))
+	ethClient := blockchain.GetEthClient()
+
+	log.Fatal(blockchain.GetAccountAddress(ethClient))
 }
